@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		F1E1404C27EF910B002591D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1404B27EF910B002591D7 /* AppDelegate.swift */; };
 		F1E1404E27EF910B002591D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1404D27EF910B002591D7 /* SceneDelegate.swift */; };
-		F1E1405027EF910B002591D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1404F27EF910B002591D7 /* ViewController.swift */; };
+		F1E1405027EF910B002591D7 /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1404F27EF910B002591D7 /* LocationListViewController.swift */; };
 		F1E1405327EF910B002591D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E1405127EF910B002591D7 /* Main.storyboard */; };
 		F1E1405527EF910F002591D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E1405427EF910F002591D7 /* Assets.xcassets */; };
 		F1E1405827EF910F002591D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E1405627EF910F002591D7 /* LaunchScreen.storyboard */; };
+		F1E1406227EF9175002591D7 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1406127EF9175002591D7 /* WeatherLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F1E1404827EF910B002591D7 /* WeatherGift2App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherGift2App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E1404B27EF910B002591D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1E1404D27EF910B002591D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1E1404F27EF910B002591D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F1E1404F27EF910B002591D7 /* LocationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		F1E1405227EF910B002591D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1E1405427EF910F002591D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1E1405727EF910F002591D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1E1405927EF910F002591D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1E1406127EF9175002591D7 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				F1E1404B27EF910B002591D7 /* AppDelegate.swift */,
 				F1E1404D27EF910B002591D7 /* SceneDelegate.swift */,
-				F1E1404F27EF910B002591D7 /* ViewController.swift */,
+				F1E1406127EF9175002591D7 /* WeatherLocation.swift */,
+				F1E1404F27EF910B002591D7 /* LocationListViewController.swift */,
 				F1E1405127EF910B002591D7 /* Main.storyboard */,
 				F1E1405427EF910F002591D7 /* Assets.xcassets */,
 				F1E1405627EF910F002591D7 /* LaunchScreen.storyboard */,
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E1405027EF910B002591D7 /* ViewController.swift in Sources */,
+				F1E1405027EF910B002591D7 /* LocationListViewController.swift in Sources */,
+				F1E1406227EF9175002591D7 /* WeatherLocation.swift in Sources */,
 				F1E1404C27EF910B002591D7 /* AppDelegate.swift in Sources */,
 				F1E1404E27EF910B002591D7 /* SceneDelegate.swift in Sources */,
 			);
