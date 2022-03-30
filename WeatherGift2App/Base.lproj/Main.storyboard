@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -94,7 +95,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L9r-bt-Leg">
-                                <rect key="frame" x="0.0" y="225" width="375" height="398"/>
+                                <rect key="frame" x="0.0" y="295" width="375" height="328"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="pLS-WM-LZ6" customClass="DailyTableViewCell" customModule="WeatherGift2App" customModuleProvider="target">
@@ -148,23 +149,77 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B2g-6y-3dV">
+                                <rect key="frame" x="0.0" y="225" width="375" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Tpf-Oe-mGd"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rGa-0v-AQR">
+                                    <size key="itemSize" width="70" height="70"/>
+                                    <size key="estimatedItemSize" width="70" height="70"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HourlyCell" id="n7E-L1-yiN" customClass="HourlyCollectionViewCell" customModule="WeatherGift2App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="38e-G2-emz">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wy-Z1-E9b">
+                                                    <rect key="frame" x="0.0" y="46" width="70" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ema-di-p4Z">
+                                                    <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-h3-H0s">
+                                                    <rect key="frame" x="0.0" y="1" width="70" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="hourLabel" destination="0ne-h3-H0s" id="sct-2e-f4k"/>
+                                            <outlet property="hourlyTemperature" destination="2Wy-Z1-E9b" id="YaN-6k-xtW"/>
+                                            <outlet property="iconImageView" destination="ema-di-p4Z" id="NXn-wq-tWn"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="whL-8v-cnr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JJK-52-TVV" firstAttribute="leading" secondItem="whL-8v-cnr" secondAttribute="leading" id="4yj-xc-rob"/>
-                            <constraint firstItem="L9r-bt-Leg" firstAttribute="top" secondItem="JJK-52-TVV" secondAttribute="bottom" id="CXl-Qn-xMI"/>
+                            <constraint firstItem="L9r-bt-Leg" firstAttribute="top" secondItem="B2g-6y-3dV" secondAttribute="bottom" id="CXl-Qn-xMI"/>
                             <constraint firstItem="Kgf-57-q0z" firstAttribute="bottom" secondItem="whL-8v-cnr" secondAttribute="bottom" id="Rcc-6y-NH7"/>
+                            <constraint firstItem="whL-8v-cnr" firstAttribute="trailing" secondItem="B2g-6y-3dV" secondAttribute="trailing" id="U60-u1-SEa"/>
                             <constraint firstItem="L9r-bt-Leg" firstAttribute="leading" secondItem="whL-8v-cnr" secondAttribute="leading" id="ZIl-Cm-R60"/>
                             <constraint firstItem="whL-8v-cnr" firstAttribute="trailing" secondItem="L9r-bt-Leg" secondAttribute="trailing" id="amE-p8-nn9"/>
                             <constraint firstItem="Kgf-57-q0z" firstAttribute="trailing" secondItem="whL-8v-cnr" secondAttribute="trailing" id="chL-OZ-pll"/>
                             <constraint firstItem="whL-8v-cnr" firstAttribute="trailing" secondItem="JJK-52-TVV" secondAttribute="trailing" id="gT4-Ka-i3i"/>
+                            <constraint firstItem="B2g-6y-3dV" firstAttribute="top" secondItem="JJK-52-TVV" secondAttribute="bottom" id="hiE-q2-V5c"/>
                             <constraint firstItem="Kgf-57-q0z" firstAttribute="leading" secondItem="whL-8v-cnr" secondAttribute="leading" id="iDU-Mj-nep"/>
                             <constraint firstItem="JJK-52-TVV" firstAttribute="top" secondItem="whL-8v-cnr" secondAttribute="top" id="liA-5f-7fE"/>
+                            <constraint firstItem="B2g-6y-3dV" firstAttribute="leading" secondItem="whL-8v-cnr" secondAttribute="leading" id="pdJ-p2-sQh"/>
                             <constraint firstItem="Kgf-57-q0z" firstAttribute="top" secondItem="L9r-bt-Leg" secondAttribute="bottom" id="ud9-lE-1jF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="B2g-6y-3dV" id="YgV-at-93d"/>
                         <outlet property="dateLabel" destination="UW3-PS-KWc" id="76l-AL-1Iq"/>
                         <outlet property="imageView" destination="HkS-7f-CxD" id="Rev-Kz-1L9"/>
                         <outlet property="pageControl" destination="dh2-lg-7ZV" id="YGC-SR-bzh"/>
@@ -264,6 +319,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cloud" catalog="system" width="128" height="88"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
