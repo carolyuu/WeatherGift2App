@@ -166,13 +166,25 @@ extension LocationDetailViewController: CLLocationManagerDelegate {
         case .restricted:
             self.oneButtonAlert(title: "Location services denied" , message: "It may be that parental controls are restriction location use in this app." )
         case .denied:
-            // TODO: handel alert w/ ability ot change
-            break
+            showAlertToPrivacySetting(title: "User has not authorized location services", message: "select 'Settings' below to enable device settings and location wervices for this app ")
         case .authorizedAlways, .authorizedWhenInUse:
             locationManager.requestLocation()
         @unknown default:
             print("😡😡Developer alert: unknown case of status in handleAuthenticalStatus\(status)")
         }
+    }
+    
+    func showAlertToPrivacySetting(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { print("Something went wrong getting the UIApplication.openSettingsURLString")
+            return
+        }
+        let settingsAction = UIAlertAction(title: "Setting", style: .default) { (_) in
+            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+        }
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+        alertController.addAction(settingsAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -188,7 +200,7 @@ extension LocationDetailViewController: CLLocationManagerDelegate {
                 // assign placemark to locationName
                 locationName = placemark?.name ?? "Parts Unknown"
             } else {
-                print("Error: retrieving place. Error code: \(error!.localizedDescription)")
+                print("Error: retrieving place. ")
                 locationName = " Could not find location"
             }
             print("locationName = \(locationName)")
@@ -203,5 +215,6 @@ extension LocationDetailViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         //deal with error
+        print("Error: \(error.localizedDescription). Failed to get device location ")
     }
 }
